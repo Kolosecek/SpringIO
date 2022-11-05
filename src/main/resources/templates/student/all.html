@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Days+One" />
@@ -98,12 +98,11 @@
                     <th class="mdl-data-table__cell--non-numeric">Id</th>
                     <th class="mdl-data-table__cell--non-numeric">Name</th>
                     <th class="mdl-data-table__cell--non-numeric">Surname</th>
-                    <th class="mdl-data-table__cell--non-numeric">Subject</th>
                     <th class="mdl-data-table__cell--non-numeric">Age</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="student: ${students.values()}">
+                <tr th:each="student:${students.values()}">
                     <td th:text="${student.id}" class="mdl-data-table__cell--non-numeric"></td>
                     <td th:text="${student.name}" class="mdl-data-table__cell--non-numeric"></td>
                     <td th:text="${student.surname}" class="mdl-data-table__cell--non-numeric"></td>

@@ -2,6 +2,7 @@ package sk.stuba.fei.asos.asos_project.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import sk.stuba.fei.asos.asos_project.repositories.StudentRepository;
 import sk.stuba.fei.asos.asos_project.student.Student;
 
@@ -22,6 +23,7 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
+    @ModelAttribute("students")
     public Iterable<Student> getAllStudents(){
         return studentRepository.findAll();
     }
