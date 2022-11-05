@@ -11,14 +11,13 @@ import sk.stuba.fei.asos.asos_project.service.StudentService;
 import sk.stuba.fei.asos.asos_project.student.Student;
 
 @Controller
-
 @RequestMapping("/student")
-public class StudentController {
+public class StudentThymeleafController {
 
     private StudentService studentService;
 
     @Autowired
-    public StudentController(StudentService studentService) {
+    public StudentThymeleafController(StudentService studentService) {
         this.studentService = studentService;
     }
 
