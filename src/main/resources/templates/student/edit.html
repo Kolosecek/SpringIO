@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Days+One" />
-  <title>Student</title>
+  <title>Student Edit</title>
   <style>
     /* width */
 
@@ -74,57 +74,51 @@
 
     .form-container {
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      align-items: center;
-      align-content: center;
     }
 
+    input {
+      border: none;
+      border-bottom: 2px solid #0a0a0a;
+    }
+
+
+    input {
+      margin: 1rem 0;
+      width: 20rem;
+    }
+
+    input:hover,
+    input:focus {
+      outline: none;
+      cursor: pointer;
+    }
 
     .card:hover {
       border: 5px solid green;
     }
-    .card h3,
-    .card h2 {
+    .card h3 {
       width: 20rem;
       text-align: center;
       margin: 1rem auto;
-    }
-
-    .card h3 {
       border-bottom: 2px solid #0a0a0a;
     }
 
-    .card h2 {
-      margin-bottom: 5rem;
-    }
-
-    .btn {
-      text-decoration: none;
-      color: #0a0a0a;
+    .card #submit-btn {
+      margin: 0 auto;
+      border: none;
+      width: 20rem;
+      text-align: center;
       padding: .5rem 1rem;
-      border-radius: 5px;
-      border: 2px solid #0a0a0a;
-      margin: 1rem;
-    }
-
-    .btn:hover{
-      transition: transform ease-in-out 1s;
-      transform: scale(1.02);
-
-    }
-
-    #add {
-      background: green;
-    }
-    #all {
-      background: lightblue;
-    }
-    #find {
-      background: hotpink;
-    }
-    #update {
       background: coral;
+      color: #0a0a0a;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    #submit-btn:hover {
+      transition: transform ease-in 2s;
+      transform: scale(1.05);
     }
 
   </style>
@@ -132,18 +126,36 @@
 <body>
 
 <header>
-  <h1>Spring Data MongoDB</h1>
+  <h1>Spring Data MongoDB Edit Student</h1>
 </header>
 
 <main>
   <div class="card">
-    <h3>Students Options</h3>
+    <h3>Edit Student</h3>
     <div class="form-container">
+      <form action="#" th:action="@{/student/add}"  th:object='${student}' method="post">
+        <label for="id">ID:</label>
+        <br>
+        <input type="text" id="id" name="id" th:value="${student.id}">
+        <br>
+        <label for="name">Name:</label>
+        <br>
+        <input type="text" id="name" name="name" th:value="${student.getName()}">
+        <br>
 
-      <a class="btn" id="add" th:href="@{/student/add}">Create student</a>
-      <a class="btn" id="all" th:href="@{/student/all}">Show All students</a>
-      <a class="btn" id="find" th:href="@{/student/find}">Find student</a>
+        <label for="surname">Surname:</label>
+        <br>
+        <input type="text" id="surname" name="surname" th:value="${student.getSurname()}">
+        <br>
 
+        <label for="age">Age:</label>
+        <br>
+        <input type="Number" id="age" name="age" th:value="${student.getAge()}">
+        <br>
+
+        <input type="submit" id="submit-btn" value="Edit student">
+
+      </form>
     </div>
   </div>
 </main>
