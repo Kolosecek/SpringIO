@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Days+One" />
-  <title>Student</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+  <title>Student Find</title>
   <style>
     /* width */
 
@@ -74,78 +76,65 @@
 
     .form-container {
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      align-items: center;
-      align-content: center;
     }
 
+    input {
+      border: none;
+      border-bottom: 2px solid #0a0a0a;
+    }
+
+
+    input {
+      margin: 1rem 0;
+      width: 20rem;
+    }
+
+    input:hover,
+    input:focus {
+      outline: none;
+      cursor: pointer;
+    }
 
     .card:hover {
       border: 5px solid green;
     }
-    .card h3,
-    .card h2 {
+    .card h3 {
       width: 20rem;
       text-align: center;
       margin: 1rem auto;
-    }
-
-    .card h3 {
       border-bottom: 2px solid #0a0a0a;
     }
 
-    .card h2 {
-      margin-bottom: 5rem;
-    }
+  a {
+    margin-left: 6rem;
+  }
 
-    .btn {
-      text-decoration: none;
-      color: #0a0a0a;
-      padding: .5rem 1rem;
-      border-radius: 5px;
-      border: 2px solid #0a0a0a;
-      margin: 1rem;
-    }
 
-    .btn:hover{
-      transition: transform ease-in-out 1s;
-      transform: scale(1.02);
-
-    }
-
-    #add {
-      background: green;
-    }
-    #all {
-      background: lightblue;
-    }
-    #find {
-      background: hotpink;
-    }
-    #delete {
-      background: red;
-    }
 
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Spring Data MongoDB</h1>
+  <h1>Spring Data MongoDB Find Student</h1>
 </header>
 
 <main>
   <div class="card">
-    <h3>Students Options</h3>
+    <h3>Find Student by name</h3>
     <div class="form-container">
+      <form action="#" th:action="@{/student/find}"  th:object='${student}' method="get">
+        <br>
+        <label for="name">Name:</label>
+        <br>
+        <input type="text" id="name" name="name">
+        <br>
+        <a th:href="@{/student/find/{name}(name=${student.getName()})}">
+          <button type="button" class="btn btn-info btn-lg">Find</button>
+        </a>
 
-      <a class="btn" id="add" th:href="@{/student/add}">Create student</a>
-      <a class="btn" id="all" th:href="@{/student/all}">Show All students</a>
-      <a class="btn" id="find" th:href="@{/student/find}">Find student</a>
-      <a class="btn" id="delete" th:href="@{/student/delete}">Delete All</a>
-
-
+      </form>
     </div>
   </div>
 </main>

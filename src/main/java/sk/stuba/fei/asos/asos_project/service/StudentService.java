@@ -38,4 +38,6 @@ public class StudentService {
         return studentRepository.findById(id);
     }
 
+    public Student findStudentByName(String name) {return  studentRepository.findStudentByName(name);}
+
 }

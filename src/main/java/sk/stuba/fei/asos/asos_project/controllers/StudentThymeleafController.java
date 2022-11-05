@@ -56,5 +56,29 @@ public class StudentThymeleafController {
         return "student/edit";
     }
 
+    @GetMapping("/delete")
+    public String removeAllStudents() {
+        studentService.deleteAllStudents();
+        return "redirect:/student/all";
+    }
+
+    /////////////////////////////////////////////////////////////////////////
+    //TODO: Ak chcete dorobte toto find alebo spravte ine funkcie lebo find je zbytocny ked mame show all
+
+    @GetMapping("/find")
+    public String find() {
+        return "student/find";
+    }
+
+    @GetMapping("/find/{name}")
+    public String findStudent(@PathVariable("name") String name, Model model) {
+        model.addAttribute("student_info", studentService.findStudentByName(name));
+        return "student/details";
+    }
+
+    @GetMapping("/details")
+    public String studentDetails(){
+        return "student/details";
+    }
 
 }

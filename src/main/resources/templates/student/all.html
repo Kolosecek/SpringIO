@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <title>Student Add</title>
+    <title>All students</title>
     <style>
         /* width */
 
@@ -64,21 +64,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
         }
 
-        .card {
-            padding: 1rem;
-            width: 40rem;
-            height: 25rem;
-            background: #ffffff;
-            color: #0a0a0a;
-            border-radius: 20px;
-            box-shadow: 0 4px 8px 0 rgba(255,255,255,0.5);
-        }
-
-        .form-container {
-            display: flex;
-            justify-content: center;
+        .back {
+            position: absolute;
+            bottom: 150px;
         }
 
 
@@ -118,11 +109,14 @@
                 </tr>
                 </tbody>
             </table>
+    <div class="back">
+        <a th:href="@{/student/}">
+            <button type="button" class="btn btn-light btn-lg">Back</button>
+        </a>
+    </div>
 </main>
 
-<footer>
 
-</footer>
 
 </body>
 </html>
