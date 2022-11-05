@@ -102,11 +102,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="student:${students.values()}">
-                    <td th:text="${student.id}" class="mdl-data-table__cell--non-numeric"></td>
-                    <td th:text="${student.name}" class="mdl-data-table__cell--non-numeric"></td>
-                    <td th:text="${student.surname}" class="mdl-data-table__cell--non-numeric"></td>
-                    <td th:text="${student.email}" class="mdl-data-table__cell--non-numeric"></td>
+                <tr th:each="student:${students}">
+                    <td th:text="${student.getId()}" class="mdl-data-table__cell--non-numeric"></td>
+                    <td th:text="${student.getName()}" class="mdl-data-table__cell--non-numeric"></td>
+                    <td th:text="${student.getSurname()}" class="mdl-data-table__cell--non-numeric"></td>
+                    <td th:text="${student.getAge()}" class="mdl-data-table__cell--non-numeric"></td>
 
                 </tr>
                 </tbody>

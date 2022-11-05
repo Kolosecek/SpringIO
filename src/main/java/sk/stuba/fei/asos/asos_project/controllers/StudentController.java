@@ -11,6 +11,7 @@ import sk.stuba.fei.asos.asos_project.service.StudentService;
 import sk.stuba.fei.asos.asos_project.student.Student;
 
 @Controller
+
 @RequestMapping("/student")
 public class StudentController {
 

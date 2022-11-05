@@ -133,7 +133,7 @@
   <div class="card">
     <h3>Create Student</h3>
     <div class="form-container">
-      <form action="#" th:action="@{/student/add}"  th:object="${student}" method="post">
+      <form action="#" th:action="@{/student/add}"  th:object='${student}' method="post">
         <label for="id">ID:</label>
         <br>
         <input type="text" id="id" name="id">
