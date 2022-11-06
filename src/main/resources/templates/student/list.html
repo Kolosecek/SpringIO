@@ -13,33 +13,35 @@
             <div class="card">
                 <h3>List of students</h3>
                 <div class="content-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Surname</th>
-                                <th>Subject</th>
-                                <th>Age</th>
-                                <th style="min-width: 220px;">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr th:each="student: ${students}">
-                                <td th:text="${student.getName()}"></td>
-                                <td th:text="${student.getSurname()}"></td>
-                                <td th:text="${student.getSubject()}"></td>
-                                <td th:text="${student.getAge()}"></td>
-                                <td class="center">
-                                    <a class="btn btn-danger mr-1" style="flex: 1; min-width: auto" th:href="@{/student/delete/{id}(id=${student.id})}">
-                                        Delete
-                                    </a>
-                                    <a class="btn btn-show" style="flex: 1; min-width: auto" th:href="@{/student/edit/{id}(id=${student.id})}">
-                                        Edit
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="scrollable-content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Surname</th>
+                                    <th>Subject</th>
+                                    <th>Age</th>
+                                    <th style="min-width: 220px;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="student: ${students}">
+                                    <td th:text="${student.getName()}"></td>
+                                    <td th:text="${student.getSurname()}"></td>
+                                    <td th:text="${student.getSubject()}"></td>
+                                    <td th:text="${student.getAge()}"></td>
+                                    <td class="center">
+                                        <a class="btn btn-danger mr-1" style="flex: 1; min-width: auto" th:href="@{/student/delete/{id}(id=${student.id})}">
+                                            Delete
+                                        </a>
+                                        <a class="btn btn-show" style="flex: 1; min-width: auto" th:href="@{/student/edit/{id}(id=${student.id})}">
+                                            Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <a class="btn mt-1" th:href="@{/student/}">
                         Back
                     </a>
