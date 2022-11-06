@@ -7,7 +7,6 @@ import sk.stuba.fei.asos.asos_project.student.Student;
 
 @Repository
 public interface StudentRepository extends MongoRepository<Student, String> {
-
     @Query("{ 'name' : ?0 }")
     Student findStudentByName(String name);
 }

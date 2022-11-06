@@ -23,13 +23,9 @@ public class AsosProjectApplication  implements CommandLineRunner {
 			studentService.getAllStudents().forEach(student -> {
 				log.info("STUDENTS --> " + student.getId() + ' ' + student.getName() + ' ' + student.getSurname() + ' ' + student.getAge());
 			});
-
 		};
 	}
 
-
 	@Override
-	public void run(String... args) throws Exception {
-
-	}
+	public void run(String... args) {}
 }

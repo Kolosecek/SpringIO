@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequestMapping("/student")
 public class StudentThymeleafController {
 
-    private StudentService studentService;
+    private final StudentService studentService;
 
     @Autowired
     public StudentThymeleafController(StudentService studentService) {
@@ -21,7 +21,9 @@ public class StudentThymeleafController {
     }
 
     @GetMapping("/")
-    public String options(){return "student/options";}
+    public String options() {
+        return "student/options";
+    }
 
     @GetMapping("/all")
     public String all(Model model) {
@@ -50,8 +52,7 @@ public class StudentThymeleafController {
 
     @GetMapping("/edit/{id}")
     public String editStudent(@PathVariable("id") Optional<String> id, Model model) {
-        Student student = id.isPresent() ?
-                studentService.findStudentById(id.get()).get() : new Student();
+        Student student = id.map(s -> studentService.findStudentById(s).get()).orElseGet(Student::new);
         model.addAttribute("student", student);
         return "student/edit";
     }

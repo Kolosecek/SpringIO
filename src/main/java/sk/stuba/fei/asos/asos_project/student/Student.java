@@ -23,16 +23,13 @@ public class Student {
 
     @NotBlank(message="Please provide a name.")
     private String name;
+
     @NotBlank(message="Please provide a surname.")
     private String surname;
 
     @NotBlank(message="Please provide a subject.")
     private String subject;
 
-
     @NotNull(message="Please provide your age.")
     private Integer age;
-
-
-
 }

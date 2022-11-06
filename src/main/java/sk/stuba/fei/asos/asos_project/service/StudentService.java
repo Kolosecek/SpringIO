@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 public class StudentService {
 
-    private StudentRepository studentRepository;
+    private final StudentRepository studentRepository;
 
     @Autowired
     public StudentService(StudentRepository studentRepository) {
@@ -22,15 +22,15 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    public Iterable<Student> getAllStudents(){
+    public Iterable<Student> getAllStudents() {
         return studentRepository.findAll();
     }
 
-    public void deleteAllStudents(){
+    public void deleteAllStudents() {
         studentRepository.deleteAll();
     }
 
-    public void deleteStudentById(String id){
+    public void deleteStudentById(String id) {
         studentRepository.deleteById(id);
     }
 
@@ -38,6 +38,7 @@ public class StudentService {
         return studentRepository.findById(id);
     }
 
-    public Student findStudentByName(String name) {return  studentRepository.findStudentByName(name);}
-
+    public Student findStudentByName(String name) {
+        return studentRepository.findStudentByName(name);
+    }
 }
