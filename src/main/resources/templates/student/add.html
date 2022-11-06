@@ -13,7 +13,7 @@
         <main>
             <div class="card">
                 <h3>Create new student</h3>
-                <form class="form-container" action="#" th:action="@{/student/add}"  th:object='${student}' method="post">
+                <form class="content-container" action="#" th:action="@{/student/add}" th:object='${student}' method="post">
                     <label for="id">
                         <span>ID:</span>
                         <input type="text" id="id" name="id">
@@ -34,9 +34,14 @@
                         <span>Age:</span>
                         <input type="Number" id="age" name="age">
                     </label>
-                    <button class="btn btn-add mt-1" type="submit">
-                        Add
-                    </button>
+                    <div class="row mt-1">
+                        <a class="btn" th:href="@{/student/}">
+                            Back
+                        </a>
+                        <button class="btn btn-add" type="submit">
+                            Add
+                        </button>
+                    </div>
                 </form>
             </div>
         </main>

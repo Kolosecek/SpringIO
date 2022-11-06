@@ -20,10 +20,10 @@ public class StudentThymeleafController {
         this.studentService = studentService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/list")
     public String all(Model model) {
         model.addAttribute("students", studentService.getAllStudents());
-        return "student/all";
+        return "/student/list";
     }
 
     @GetMapping("/add")
@@ -35,7 +35,7 @@ public class StudentThymeleafController {
     @PostMapping("/add")
     public String addSubmit(@ModelAttribute("student") Student student){
         studentService.saveStudent(student);
-        return "redirect:/student/all";
+        return "redirect:/student/list";
     }
 
     @GetMapping("/")
@@ -54,12 +54,12 @@ public class StudentThymeleafController {
     public String removeStudent(@PathVariable("id") String id, Model model) {
         studentService.deleteStudentById(id);
         model.addAttribute("students", studentService.getAllStudents());
-        return "student/all";
+        return "/student/list";
     }
 
     @GetMapping("/delete")
     public String removeAllStudents() {
         studentService.deleteAllStudents();
-        return "redirect:/student/all";
+        return "redirect:/student/list";
     }
 }

@@ -39,7 +39,7 @@ header {
     justify-content: center;
 }
 
-h1,h2,h3 {
+h1, h2, h3 {
     margin: 0;
     padding: 0;
     cursor: default;
@@ -63,6 +63,33 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+table {
+    background: white;
+    border: 1px solid rgba(0, 0, 0,.12);
+    font-size: 13px;
+}
+
+th {
+    color: rgba(0,0,0,.5);
+    font-size: 12px;
+    height: 48px;
+    line-height: 24px;
+    padding: 0 18px 12px 18px;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+
+td {
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    border-top: 1px solid rgba(0,0,0,.12);
+    height: 48px;
+    padding: 12px 18px;
+}
+
+tr:last-of-type td {
+    border-bottom: 0;
 }
 
 .btn {
@@ -121,7 +148,13 @@ main {
     border-bottom: 2px solid #0a0a0a;
 }
 
-.form-container {
+.center {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.content-container {
     align-content: center;
     align-items: center;
     display: flex;
@@ -132,28 +165,32 @@ main {
     margin: 0 2rem;
 }
 
-.form-content {
-    display: flex;
-    flex: 1;
-    align-items: center;
-}
-
-.form-container label {
+.content-container label {
     display: flex;
     margin: 1rem 0;
     width: 100%;
 }
 
-.form-container label span {
+.content-container label span {
     align-items: center;
     display: flex;
     min-width: 8rem;
 }
 
-.form-container label input {
+.content-container label input {
     width: 100%;
+}
+
+.mr-1 {
+    margin-right: 1rem;
 }
 
 .mt-1 {
     margin-top: 1rem;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
