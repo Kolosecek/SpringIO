@@ -18,14 +18,6 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-    public Student saveStudent(Student student) {
-        return studentRepository.save(student);
-    }
-
-    public Iterable<Student> getAllStudents() {
-        return studentRepository.findAll();
-    }
-
     public void deleteAllStudents() {
         studentRepository.deleteAll();
     }
@@ -38,7 +30,11 @@ public class StudentService {
         return studentRepository.findById(id);
     }
 
-    public Student findStudentByName(String name) {
-        return studentRepository.findStudentByName(name);
+    public Iterable<Student> getAllStudents() {
+        return studentRepository.findAll();
+    }
+
+    public Student saveStudent(Student student) {
+        return studentRepository.save(student);
     }
 }
