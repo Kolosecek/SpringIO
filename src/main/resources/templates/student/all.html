@@ -85,17 +85,17 @@
             <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp" style="margin: 10px">
                 <thead>
                 <tr>
-                    <th class="mdl-data-table__cell--non-numeric">Id</th>
                     <th class="mdl-data-table__cell--non-numeric">Name</th>
                     <th class="mdl-data-table__cell--non-numeric">Surname</th>
+                    <th class="mdl-data-table__cell--non-numeric">Subject</th>
                     <th class="mdl-data-table__cell--non-numeric">Age</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="student: ${students}">
-                    <td th:text="${student.id}" class="mdl-data-table__cell--non-numeric"></td>
                     <td th:text="${student.getName()}" class="mdl-data-table__cell--non-numeric"></td>
                     <td th:text="${student.getSurname()}" class="mdl-data-table__cell--non-numeric"></td>
+                    <td th:text="${student.getSubject()}" class="mdl-data-table__cell--non-numeric"></td>
                     <td th:text="${student.getAge()}" class="mdl-data-table__cell--non-numeric"></td>
                     <td>
                         <a th:href="@{/student/delete/{id}(id=${student.id})}">

@@ -21,7 +21,7 @@ public class AsosProjectApplication  implements CommandLineRunner {
 		return (args) -> {
 			log.info("Generating sample data");
 			studentService.getAllStudents().forEach(student -> {
-				log.info("STUDENTS --> " + student.id + ' ' + student.getName() + ' ' + student.getSurname() + ' ' + student.getAge());
+				log.info("STUDENTS --> " + student.getId() + ' ' + student.getName() + ' ' + student.getSurname() + ' ' + student.getAge());
 			});
 
 		};

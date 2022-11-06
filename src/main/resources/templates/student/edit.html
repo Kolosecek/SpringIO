@@ -65,7 +65,7 @@
     .card {
       padding: 1rem;
       width: 40rem;
-      height: 25rem;
+      height: 30rem;
       background: #ffffff;
       color: #0a0a0a;
       border-radius: 20px;
@@ -132,6 +132,7 @@
 <main>
   <div class="card">
     <h3>Edit Student</h3>
+
     <div class="form-container">
       <form action="#" th:action="@{/student/add}"  th:object='${student}' method="post">
         <label for="id">ID:</label>
@@ -146,6 +147,11 @@
         <label for="surname">Surname:</label>
         <br>
         <input type="text" id="surname" name="surname" th:value="${student.getSurname()}">
+        <br>
+
+        <label for="subject">Subject:</label>
+        <br>
+        <input type="text" id="subject" name="subject" th:value="${student.getSubject()}">
         <br>
 
         <label for="age">Age:</label>
