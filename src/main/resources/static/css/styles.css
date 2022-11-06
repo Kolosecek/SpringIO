@@ -1,0 +1,159 @@
+:root {
+    --color-dar-grey: #242424;
+    --color-green: #008900;
+    --color-grey: #6b6b6b;
+    --color-purple: #6e12d3;
+    --color-red: #e93333;
+    --color-white: #f6f6f6;
+    --height-header: 2rem;
+    --padding-header: 1rem;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--color-grey);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-dar-grey);
+    border-radius: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Days One",sans-serif;
+}
+
+header {
+    height: var(--height-header);
+    padding: var(--padding-header);
+    background: var(--color-dar-grey);
+    color: var(--color-white);
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+}
+
+h1,h2,h3 {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #0a0a0a;
+    height: 1.5rem;
+}
+
+main {
+    width: 100%;
+    height: calc(100vh - var(--height-header) - 2 * var(--padding-header));
+    background-image: url('https://coolbackgrounds.io/images/backgrounds/index/compute-ea4c57a4.png');
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    border: 2px solid var(--color-dar-grey);
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    font-family: "Days One",sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    min-width: 10.5rem;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    transition: transform ease-in-out 500ms;
+    transform: translateY(-2px);
+}
+
+.btn-add {
+    background: var(--color-green);
+}
+
+.btn-danger {
+    background: var(--color-red);
+}
+
+.btn-show {
+    background: var(--color-purple);
+}
+
+.card {
+    background: var(--color-white);
+    border-radius: 3%;
+    box-shadow: 0 4px 8px 0 rgba(255,255,255,0.5);
+    display: flex;
+    flex-direction: column;
+    min-height: 26rem;
+    min-width: 40rem;
+    padding: 1rem;
+}
+
+.card:hover {
+    border: 3px solid var(--color-green);
+}
+
+.card h2, .card h3 {
+    margin: 1rem auto;
+    max-width: 23rem;
+    text-align: center;
+}
+
+.card h3 {
+    border-bottom: 2px solid #0a0a0a;
+}
+
+.form-container {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    margin: 0 2rem;
+}
+
+.form-content {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.form-container label {
+    display: flex;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.form-container label span {
+    align-items: center;
+    display: flex;
+    min-width: 8rem;
+}
+
+.form-container label input {
+    width: 100%;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}

@@ -20,11 +20,6 @@ public class StudentThymeleafController {
         this.studentService = studentService;
     }
 
-    @GetMapping("/")
-    public String options() {
-        return "student/options";
-    }
-
     @GetMapping("/all")
     public String all(Model model) {
         model.addAttribute("students", studentService.getAllStudents());
@@ -43,11 +38,9 @@ public class StudentThymeleafController {
         return "redirect:/student/all";
     }
 
-    @GetMapping("/delete/{id}")
-    public String removeStudent(@PathVariable("id") String id, Model model) {
-        studentService.deleteStudentById(id);
-        model.addAttribute("students", studentService.getAllStudents());
-        return "student/all";
+    @GetMapping("/")
+    public String student() {
+        return "student/index";
     }
 
     @GetMapping("/edit/{id}")
@@ -57,29 +50,16 @@ public class StudentThymeleafController {
         return "student/edit";
     }
 
+    @GetMapping("/delete/{id}")
+    public String removeStudent(@PathVariable("id") String id, Model model) {
+        studentService.deleteStudentById(id);
+        model.addAttribute("students", studentService.getAllStudents());
+        return "student/all";
+    }
+
     @GetMapping("/delete")
     public String removeAllStudents() {
         studentService.deleteAllStudents();
         return "redirect:/student/all";
     }
-
-    /////////////////////////////////////////////////////////////////////////
-    //TODO: Ak chcete dorobte toto find alebo spravte ine funkcie lebo find je zbytocny ked mame show all
-
-    @GetMapping("/find")
-    public String find() {
-        return "student/find";
-    }
-
-    @GetMapping("/find/{name}")
-    public String findStudent(@PathVariable("name") String name, Model model) {
-        model.addAttribute("student_info", studentService.findStudentByName(name));
-        return "student/details";
-    }
-
-    @GetMapping("/details")
-    public String studentDetails(){
-        return "student/details";
-    }
-
 }
