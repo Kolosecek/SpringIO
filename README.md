@@ -1,5 +1,5 @@
 # SpringIO
-Link na dokumentáciu:__
+Link na dokumentáciu:<br />
 https://github.com/Kolosecek/SpringIO/blob/luxo2/documentation.pdf __
 Link na prezentáciu:__
 https://github.com/Kolosecek/SpringIO/blob/luxo2/SpringData%2BIO.pdf __
