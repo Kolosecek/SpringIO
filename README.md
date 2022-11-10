@@ -1,6 +1,7 @@
 # SpringIO
 Link na dokumentáciu:<br />
 https://github.com/Kolosecek/SpringIO/blob/luxo2/documentation.pdf<br />
+<br />
 Link na prezentáciu:<br />
 https://github.com/Kolosecek/SpringIO/blob/luxo2/SpringData%2BIO.pdf<br />
 
@@ -9,4 +10,4 @@ https://github.com/Kolosecek/SpringIO/blob/luxo2/SpringData%2BIO.pdf<br />
 - [x] a) Automatické generovanie queries<br />
 - [ ] b) Paralelný mechanizmus<br />
 - [x] c) Repository pattern<br />
-Správne odpovede: a),c)<br />
+
